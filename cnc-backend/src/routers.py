@@ -42,10 +42,7 @@ async def obterner_preguntas(request: Request_Preguntas):
 @router.post("/procesar_preguntas")
 async def procesar_preguntas_generar_word(request: Request_Documento):
 
-    print(request.datos_busqueda)
-    print(request.datos_busqueda.segmento)
-    print(len(request.preguntas_seleccionadas))
-    print(request.preguntas_seleccionadas[0])
+
 
     documento_word = generar_documento_word(request.datos_busqueda, request.preguntas_seleccionadas)
     
