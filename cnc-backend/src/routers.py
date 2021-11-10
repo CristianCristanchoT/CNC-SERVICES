@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Query
-
+from fastapi.responses import FileResponse
 from typing import Optional
 
 import io
@@ -40,7 +40,7 @@ async def obterner_preguntas(request: Request_Preguntas):
     return response
 
 @router.post("/procesar_preguntas")
-async def procesar_preguntas(request: Request_Documento):
+async def procesar_preguntas_generar_word(request: Request_Documento):
 
     print(request.datos_busqueda)
     print(request.datos_busqueda.segmento)
@@ -48,5 +48,6 @@ async def procesar_preguntas(request: Request_Documento):
     print(request.preguntas_seleccionadas[0])
 
     documento_word = generar_documento_word(request.datos_busqueda, request.preguntas_seleccionadas)
-
-    return request
+    
+    
+    return documento_word

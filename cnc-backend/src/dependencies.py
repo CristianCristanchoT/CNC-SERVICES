@@ -1,6 +1,12 @@
+import os, shutil
+import glob
 import json
 from bson import json_util
-
+import string
+import random
+from docx import Document
+from docx.shared import Inches
+from fastapi.responses import FileResponse
 
 from .settings import (
     preguntas
@@ -229,5 +235,33 @@ def obtener_preguntas(sector  = '', segmento = '', cliente = '', competidor = ''
 
 def generar_documento_word(metadatos, preguntas_seleccionadas):
 
-    pass
+    #delete_element_inseide_folder('docs/word/*')
 
+    document_name = id_generator()
+
+    print(document_name)
+
+    file_path = 'docs/demo.docx'
+    file_name = 'demo.docx'
+
+    documento_word = FileResponse(path=file_path, filename=file_name, media_type='application/octet-stream')
+
+    return documento_word
+
+
+def delete_element_inseide_folder(folder_path):
+    files = glob.glob(folder_path)
+    for f in files:
+        os.remove(f)
+
+
+def normalizar_texto(txt):
+    try:
+        x = txt.lower().lstrip().rstrip()
+        return x
+    except:
+        return txt
+
+def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
+
+    return(''.join(random.choice(chars) for _ in range(size)))
