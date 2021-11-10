@@ -27,4 +27,13 @@ services:
         - 8080:80
     environment:
         - DB_URL=mongodb://admin:easydata@mongo_service:27017/CNC
+
+  cnc_frontend:
+    build:
+      context: ./cnc-front
+      dockerfile: ./Dockerfile
+    container_name: cnc_frontend
+    ports: 
+        - 5000:80
+
  
