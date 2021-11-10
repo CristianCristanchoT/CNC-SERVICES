@@ -42,7 +42,7 @@ async function get_document(input, url) {
 
 async function main() {
     grupos = [];
-    var root_url = "http://localhost:8080/obterner_preguntas";
+    var root_url = "http://209.50.62.200:8080/obterner_preguntas";
     var parameters = sessionStorage.getItem('parameters');
     // estructura parameters
     // var parameters = {
@@ -136,7 +136,7 @@ enviar = async () => {
         'Content-Type': 'application/json'
     }
 
-    var root_url = "http://localhost:8080/procesar_preguntas";
+    var root_url = "http://209.50.62.200:8080/procesar_preguntas";
     // var data = await get_document(JSON.parse(dataRequest), root_url);
     var data = await get_document(dataRequest, root_url);
     var link = document.createElement('a');

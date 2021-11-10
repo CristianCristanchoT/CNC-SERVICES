@@ -9,7 +9,7 @@ $(document).ready(() => {
 function AutocompletarSegmentos() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/get_segmentos",
+        url: "http://209.50.62.200:8080/get_segmentos",
     })
         .done((data, textStatus, jqXHR) => {
             const segmentos = data;
@@ -29,7 +29,7 @@ function AutocompletarSegmentos() {
 function AutocompletarSectores() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/get_sectores",
+        url: "http://209.50.62.200:8080/get_sectores",
     })
         .done((data, textStatus, jqXHR) => {
             const sectores = data;
@@ -49,7 +49,7 @@ function AutocompletarSectores() {
 function AutocompletarClientes() {
     $.ajax({
         type: "GET",
-        url: "http://localhost:8080/get_clientes",
+        url: "http://209.50.62.200:8080/get_clientes",
     })
         .done((data, textStatus, jqXHR) => {
             const clientes = data;
