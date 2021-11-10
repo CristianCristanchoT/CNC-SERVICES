@@ -1,2 +1,3 @@
 mongo/DB_DATA/
 cnc-backend/__pycache__/
+cnc-backend/src/__pycache__/
