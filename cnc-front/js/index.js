@@ -13,7 +13,7 @@ function AutocompletarSegmentos() {
     })
         .done((data, textStatus, jqXHR) => {
             const segmentos = data;
-            var opcionesHTML = "";
+            var opcionesHTML = `<option value="">SELECCIONE UNA OPCIÓN</option>`;
             segmentos.forEach(function (segmento, index) {
                 //   console.log(`${index} : ${segmento}`);
                 opcionesHTML += `<option value="${segmento}">${segmento}</option>`;
@@ -33,7 +33,7 @@ function AutocompletarSectores() {
     })
         .done((data, textStatus, jqXHR) => {
             const sectores = data;
-            var opcionesHTML = "";
+            var opcionesHTML = `<option value="">SELECCIONE UNA OPCIÓN</option>`;
             sectores.forEach(function (sector, index) {
                 //   console.log(`${index} : ${sector}`);
                 opcionesHTML += `<option value="${sector}">${sector}</option>`;
@@ -53,7 +53,7 @@ function AutocompletarClientes() {
     })
         .done((data, textStatus, jqXHR) => {
             const clientes = data;
-            var opcionesHTML = "";
+            var opcionesHTML = ``;
             clientes.forEach(function (cliente, index) {
                 //   console.log(`${index} : ${sector}`);
                 opcionesHTML += `<option value="${cliente}">${cliente}</option>`;
@@ -66,14 +66,34 @@ function AutocompletarClientes() {
 }
 
 enviar = () => {
+    let historico = false
+    let sincompetidor = false
+    let competidor = document.getElementById('icompetidor').value;
+    if(document.getElementById('historico').checked){
+        historico = true
+    }
+    if(document.getElementById('sincompetidor').checked){
+        sincompetidor = true
+        competidor = "";
+    }
     var parameters = {
         "sector": document.getElementById('isector').value,
         "segmento": document.getElementById('isegmento').value,
         "cliente": document.getElementById('icliente').value,
-        "solo_historicos": true,
-        "competidor": document.getElementById('icompetidor').value,
-        "sin_competidor": false
+        "solo_historicos": historico,
+        "competidor": competidor,
+        "sin_competidor": sincompetidor
     };
     sessionStorage.setItem("parameters", JSON.stringify(parameters));
     window.location.href = "./preguntas.html";
+}
+
+competidor = (input) =>{
+    let inputCompetidor = document.getElementById('icompetidor');
+    if(input.checked){
+        inputCompetidor.disabled = true;
+        inputCompetidor.value = '';
+    }else{
+        inputCompetidor.disabled = false;
+    }
 }
