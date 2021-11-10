@@ -1,0 +1,30 @@
+version: "3.9"
+
+services:
+
+  mongo_service:
+    build:
+      context: ./mongo
+      dockerfile: ./Dockerfile.mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin_mongo
+      MONGO_INITDB_ROOT_PASSWORD: easydata
+    container_name: mongo_cnc
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./mongo/DB_DATA:/data/db
+      - ./mongo/mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js
+      - ./mongo/mongod.conf.orig:/etc/mongod.conf.orig
+    command: mongod --auth
+
+  cnc_backend:
+    build:
+      context: ./cnc-backend
+      dockerfile: ./Dockerfile
+    container_name: cnc_backend
+    ports: 
+        - 8080:80
+    environment:
+        - DB_URL=mongodb://admin:easydata@mongo_service:27017/CNC
+ 
