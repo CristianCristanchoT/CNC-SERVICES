@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BOOTSTRAP 4.0.0 -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+    <!-- FONTAWESOME 5.8.1-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Proyecto</title>
+</head>
+
+<body>
+    <!-- Menu -->
+    <div class="container-nav">
+        <nav>
+            <ul class="sidebar-menu">
+                <hr />
+                <li class="list__item list__item--click">
+                    <div class="list_button list__button--click">
+                        <i class="fas fa-home inicio"></i><br /><span>
+                            Seleccion de Opciones</span>
+                    </div>
+                </li>
+                <hr class="titulo" />
+            </ul>
+        </nav>
+    </div>
+
+    <!-- inicio de Formulario -->
+    <div class="container">
+        <div class="card">
+            <div class="card-body" style="align-items: center; display: flex; justify-content: center;">
+                <h1>Encabezado (Saludo)</h1>
+                <button class="btn btn-primary" id="bnt_test" onclick="enviar()">Enviar</button>
+            </div>
+        </div>
+
+        <div id="divPreguntas">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/preguntas.js"></script>
+</body>
+
+</html>

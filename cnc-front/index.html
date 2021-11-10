@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- BOOTSTRAP 4.0.0 -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+
+  <!-- FONTAWESOME 5.8.1-->
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .form-check label {
+      font-size: 1.3em;
+      color: rgb(148, 148, 148);
+    }
+
+    label {
+      font-size: 1.5em;
+    }
+  </style>
+
+  <title>Proyecto</title>
+</head>
+
+<body>
+  <div class="container-nav">
+    <nav>
+      <div><img src="./img/logo.png" alt=""></div>
+      <ul class="sidebar-menu">
+        <hr />
+        <li class="list__item list__item--click">
+          <div class="list_button list__button--click">
+            <i class="fas fa-home inicio"></i><br /><span>
+              Seleccion de Opciones</span>
+          </div>
+        </li>
+        <hr class="titulo" />
+      </ul>
+    </nav>
+  </div>
+
+  <!-- inicio de Formulario -->
+
+  <div class="container">
+    <h2>Selector de Opciones</h2>
+    <div class="row">
+      <div class="col">
+        <span class="verticalsector"></span>
+        <div style="margin-left: 30px;">
+          <label for="isector">Sector (No obligatorio) </label>
+          <select class="form-control boxshadow" id="isector"></select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span class="verticalsector"></span>
+        <div style="margin-left: 30px;">
+          <label for="isegmento">Segmento (No obligatorio) </label>
+          <select class="form-control boxshadow" id="isegmento"></select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span class="verticalsector"></span>
+        <div style="margin-left: 30px;">
+          <label for="icliente">Cliente </label>
+          <input list="listClientes" placeholder="Cliente" class="form-control boxshadow" id="icliente" />
+          <!-- col-sm-6 custom-select custom-select-sm -->
+          <datalist id="listClientes">
+          </datalist>
+        </div>
+      </div>
+      <div class="col">
+        <span class="verticalsector"></span>
+        <div style="margin-left: 30px;">
+          <label for="icompetidor">Competidor </label>
+          <input type="text" placeholder="Competidor" class="form-control boxshadow" id="icompetidor" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <span class="verticalsector"></span>
+        <label for="" style="margin-left: 30px;">Otras Opciones</label>
+        <div class="form-check" style="margin-left: 30px;">
+          <input class="form-check-input" type="checkbox" value="" id="historico">
+          <label style="margin-left: 10px;" class="form-check-label" for="flexCheckDefault">
+            Historico del cliente
+          </label>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-check">
+          <div style="height: 40px; width: 100%;"></div>
+          <input class="form-check-input" type="checkbox" value="" id="historico">
+          <label style="margin-left: 10px;" class="form-check-label" for="flexCheckDefault">
+            Sin competidor
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-md-center">
+      <button class="btn btn-sm btn-primary" id="btnEnviar" onclick="enviar()">Enviar</button>
+    </div>
+
+    <hr style="width: 100%;">
+
+    <div class="card boxshadow">
+      <div class="card-body">
+        <form action="" method="POST" id="registrar-form" class="secundario">
+          <div class="form-group">
+            <div>
+              <h2>Nuevos Elementos</h2>
+            </div>
+            <div class="width-12">
+              <input type="text" placeholder="¿A que sector pertenece?" class="form-control" name="sector"
+                id="sector" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="width-12">
+              <input type="text" placeholder="¿A que segmento pertenece?" class="form-control" name="segmento"
+                id="segmento" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="width-12">
+              <input type="text" placeholder="¿A que otro sector,segmento o cliente evaluado previamente se parece?"
+                class="form-control" name="otros" id="otros" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <br><br>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="js/index.js"></script>
+</body>
+
+</html>
