@@ -32,7 +32,8 @@
 </head>
 
 <body>
-  <div class="container-nav">
+
+  <!-- <div class="container-nav">
     <nav>
       <div><img src="./img/logo.png" alt=""></div>
       <ul class="sidebar-menu">
@@ -46,13 +47,33 @@
         <hr class="titulo" />
       </ul>
     </nav>
+  </div> -->
+  <div class="container-nav">
+    <ul class="nav flex-column justify-content-center">
+      <img src="./img/logo.png" alt="" style="margin-right: 10px;">
+      <hr>
+      <li class="nav-item">
+        <a class="nav-link" style="font-size: 15px; color: white;" href="#">
+          <p style="text-align:center">
+            <i class="fas fa-home" style="font-size: 40px; margin-bottom: 5px;"></i>
+            <br>Selección de Opciones
+          </p> 
+        </a>
+      </li>
+      <hr>
+    </ul>
   </div>
 
   <!-- inicio de Formulario -->
-
-  <div class="container">
-    <h2>Selector de Opciones</h2>
+  <div class="container" style="margin-left: 200px;">
+    <br><br>
     <div class="row">
+      <div class="col-md-4">
+        <h2 style="">Selector de Opciones</h2>
+        <hr style="float: left; margin-bottom: 20px;">
+      </div>
+    </div>
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col">
         <span class="verticalsector"></span>
         <div style="margin-left: 30px;">
@@ -61,7 +82,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col">
         <span class="verticalsector"></span>
         <div style="margin-left: 30px;">
@@ -70,7 +91,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col">
         <span class="verticalsector"></span>
         <div style="margin-left: 30px;">
@@ -89,7 +110,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row" style="margin-bottom: 20px;">
       <div class="col">
         <span class="verticalsector"></span>
         <label for="" style="margin-left: 30px;">Otras Opciones</label>
@@ -111,7 +132,7 @@
       </div>
     </div>
     <div class="row justify-content-md-center">
-      <button class="btn btn-sm btn-primary" id="btnEnviar" onclick="enviar()">Enviar</button>
+      <button class="btn btn-sm btn-secondary" id="btnEnviar" onclick="enviar()">Enviar</button>
     </div>
 
     <hr style="width: 100%;">
@@ -119,25 +140,25 @@
     <div class="card boxshadow">
       <div class="card-body">
         <form action="" method="POST" id="registrar-form" class="secundario">
-          <div class="form-group">
-            <div>
+          <div class="row">
+            <div class="col-md-4">
               <h2>Nuevos Elementos</h2>
-            </div>
-            <div class="width-12">
-              <input type="text" placeholder="¿A que sector pertenece?" class="form-control" name="sector"
-                id="sector" />
+              <hr style="float: left;">
             </div>
           </div>
           <div class="form-group">
             <div class="width-12">
-              <input type="text" placeholder="¿A que segmento pertenece?" class="form-control" name="segmento"
-                id="segmento" />
+              <input type="text" placeholder="¿A que sector pertenece?" class="form-control" name="sector" style="background-color: #D9D9D9;" id="sector" />
             </div>
           </div>
           <div class="form-group">
             <div class="width-12">
-              <input type="text" placeholder="¿A que otro sector,segmento o cliente evaluado previamente se parece?"
-                class="form-control" name="otros" id="otros" />
+              <input type="text" placeholder="¿A que segmento pertenece?" class="form-control" name="segmento" style="background-color: #D9D9D9;" id="segmento" />
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="width-12">
+              <input type="text" placeholder="¿A que otro sector,segmento o cliente evaluado previamente se parece?" class="form-control" name="otros" id="otros" style="background-color: #D9D9D9;"/>
             </div>
           </div>
         </form>

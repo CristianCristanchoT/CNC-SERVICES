@@ -42,7 +42,7 @@ async function get_document(input, url) {
 
 async function main() {
     grupos = [];
-    var root_url = "http://localhost:8080/obterner_preguntas";
+    var root_url = "http://209.50.62.200:8080/obterner_preguntas";
     var parameters = sessionStorage.getItem('parameters');
     // estructura parameters
     // var parameters = {
@@ -85,10 +85,10 @@ crearBody = (data, grupos) => {
         cadenaHTML += `
                     <div class="row d-flex">
                         <div class="col">
-                            <h3><span class="verticalsector-dos"></span>&nbsp;&nbsp;&nbsp;${dataDiv[0].Categorias}</h3>
+                            <h3><span class="verticalsector-dos"></span>&nbsp;&nbsp;&nbsp;${capitalize(dataDiv[0].Categorias)}</h3>
                         </div>
                         <div class="col">
-                            <button class="btn btn-primary btn-lg" style="float: right;">Nueva pregunta</button>
+                            <button class="btn btn-secondary btn-lg" style="float: right;">Nueva pregunta</button>
                         </div>
                     </div>
                     `;
@@ -96,7 +96,7 @@ crearBody = (data, grupos) => {
             cadenaHTML += `
                     <div class="form-check">
                         <input class="form-check-input preguntas" type="checkbox" value="${element._id.$oid}" name="preguntas[]" onchange="almacenar(this)">
-                        <label class="form-check-label">
+                        <label class="form-check-label" style="margin-left: 10px;">
                             ${element.Preguntas}
                         </label>
                     </div>
@@ -136,7 +136,7 @@ enviar = async () => {
         'Content-Type': 'application/json'
     }
 
-    var root_url = "http://localhost:8080/procesar_preguntas";
+    var root_url = "http://209.50.62.200:8080/procesar_preguntas";
     // var data = await get_document(JSON.parse(dataRequest), root_url);
     var data = await get_document(dataRequest, root_url);
     var link = document.createElement('a');
@@ -156,4 +156,8 @@ almacenar = (input) => {
         }
     }
 }
-        // END CHECKBOX
+// END CHECKBOX
+
+capitalize = (word) => {
+    return word[0].toUpperCase() + word.slice(1);
+}
