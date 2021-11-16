@@ -53,7 +53,7 @@
       <img src="./img/logo.png" alt="" style="margin-right: 10px;">
       <hr>
       <li class="nav-item">
-        <a class="nav-link" style="font-size: 15px; color: white;" href="#">
+        <a class="nav-link" style="font-size: 15px; color: white;" href="./index.html">
           <p style="text-align:center">
             <i class="fas fa-home" style="font-size: 40px; margin-bottom: 5px;"></i>
             <br>Selección de Opciones
@@ -139,13 +139,16 @@
 
     <div class="card boxshadow">
       <div class="card-body">
-        <form action="" method="POST" id="registrar-form" class="secundario">
-          <div class="row">
-            <div class="col-md-4">
-              <h2>Nuevos Elementos</h2>
-              <hr style="float: left;">
-            </div>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Nuevos Elementos</h2>
+            <hr style="float: left;">
           </div>
+          <div class="col">
+            <button class="btn btn-sm btn-secondary" style="float: right;">Enviar</button>
+          </div>
+        </div>
+        <form action="" method="POST" id="registrar-form" class="secundario">
           <div class="form-group">
             <div class="width-12">
               <input type="text" placeholder="¿A que sector pertenece?" class="form-control" name="sector" style="background-color: #D9D9D9;" id="sector" />
