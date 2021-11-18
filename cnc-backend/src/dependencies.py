@@ -32,11 +32,7 @@ def incluir_cliente_preguntas(preguntas, cliente):
 
     for pregunta in preguntas:
 
-        if 'cliente' in pregunta['Preguntas']:
-                
-                pregunta['Preguntas'] = pregunta['Preguntas'].replace('cliente', cliente)
-
-        elif 'Cliente' in pregunta['Preguntas']:
+        if 'Cliente' in pregunta['Preguntas']:
                 
                 pregunta['Preguntas'] = pregunta['Preguntas'].replace('Cliente', cliente)
 
@@ -46,11 +42,7 @@ def incluir_competidor_preguntas(preguntas, competidor):
 
     for pregunta in preguntas:
 
-        if 'competidor' in pregunta['Preguntas']:
-                
-            pregunta['Preguntas'] = pregunta['Preguntas'].replace('competidor', competidor)
-
-        elif 'Competidor' in pregunta['Preguntas']:
+        if 'Competidor' in pregunta['Preguntas']:
 
              pregunta['Preguntas'] = pregunta['Preguntas'].replace('Competidor', competidor)
 
@@ -62,7 +54,7 @@ def excluir_preguntas_competidor(preguntas):
 
     for pregunta in preguntas:
 
-        if 'competidor' not in pregunta['Preguntas']:
+        if 'Competidor' not in pregunta['Preguntas']:
                 
             result.append(pregunta)  
 
